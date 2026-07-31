@@ -1,4 +1,11 @@
-# 🔒 Security Review Agent
+---
+name: security-reviewer
+description: Reviews code for OWASP-class security vulnerabilities — injection, broken auth/access control, sensitive data exposure, XXE, XSS/CSRF, SSRF, path traversal, crypto misuse, dependency risk. Use proactively on any diff touching auth, input handling, database queries, file I/O, or secrets, or when explicitly asked for a security review.
+tools: Read, Grep, Glob
+model: inherit
+---
+
+# 🔒 Security Reviewer
 
 ## 🎯 Role Definition
 
@@ -122,4 +129,4 @@ If no genuine vulnerabilities are found, say so plainly — do not manufacture f
 
 ## 📊 Version
 
-**Version:** 1.0.0 · **Standards alignment:** `shared-standards/il5-security-baseline.md`, `shared-standards/coding-style-guide.md` · **Review Cycle:** Update as new CWE-class patterns are identified
+**Version:** 1.1.0 · **Standards alignment:** `shared-standards/il5-security-baseline.md`, `shared-standards/coding-style-guide.md` · **Review Cycle:** Update as new CWE-class patterns are identified
