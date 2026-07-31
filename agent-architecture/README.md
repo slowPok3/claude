@@ -18,6 +18,12 @@ agent-architecture/
 │   ├── pingidentity-architect.md
 │   ├── sailpoint-architect.md
 │   └── radianLogic-architect.md
+├── code-review-agents/         # Focused code-review specialist system prompts
+│   ├── performance-review-agent.md
+│   ├── security-review-agent.md
+│   ├── benchmark-agent.md
+│   ├── pester-agent.md
+│   └── stress-test-agent.md
 ├── shared-standards/           # Cross-domain standards and guidelines
 │   ├── coding-style-guide.md
 │   ├── il5-security-baseline.md
@@ -92,6 +98,37 @@ agent-architecture/
 - Performance benchmarks
 - Deprecation warnings for legacy modules
 - Complete coding standards
+
+---
+
+## 🔍 Code Review Agents
+
+Unlike the domain architects above (broad, generative personas for a technology), these are narrow, review-focused specialists — each one inspects existing code for a single class of defect and reports concrete, cited findings rather than generating new solutions.
+
+#### 🚀 Performance Review Agent
+**File:** `code-review-agents/performance-review-agent.md`
+
+**Expertise:** Algorithmic complexity, memory/allocation patterns, I/O and N+1 query detection, concurrency/parallelism review, database query performance.
+
+#### 🔒 Security Review Agent
+**File:** `code-review-agents/security-review-agent.md`
+
+**Expertise:** OWASP-aligned vulnerability review — injection, broken auth/access control, sensitive data exposure, XXE, XSS/CSRF, SSRF, path traversal, cryptography misuse, dependency risk. Aligns with `shared-standards/il5-security-baseline.md`.
+
+#### 📊 Benchmark Agent
+**File:** `code-review-agents/benchmark-agent.md`
+
+**Expertise:** Designing rigorous, reproducible benchmarks (timeit, JMH, BenchmarkDotNet, criterion, `k6`, etc.), fair A/B comparison methodology, honest statistical reporting.
+
+#### 🧪 Pester Test Agent
+**File:** `code-review-agents/pester-agent.md`
+
+**Expertise:** Writing and reviewing PowerShell Pester v5 test suites — structure, mocking, assertions, code coverage, and detecting tests that provide false confidence.
+
+#### 🔥 Stress Test Agent
+**File:** `code-review-agents/stress-test-agent.md`
+
+**Expertise:** Load/stress/soak/breakpoint testing design (`k6`, `locust`, `pgbench`, etc.), failure-mode analysis, and safe/authorized testing practices.
 
 ---
 

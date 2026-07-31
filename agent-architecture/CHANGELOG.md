@@ -7,6 +7,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [Unreleased]
+
+### Added
+
+#### Code Review Agents
+
+- 📁 New `code-review-agents/` directory for narrow, review-focused (not generative) specialist prompts
+
+**Performance Review Agent (v1.0.0)**
+- ✅ Algorithmic complexity, memory/allocation, I/O, concurrency, and database query review checklists
+- ✅ Severity-scaled, cited-finding output format
+
+**Security Review Agent (v1.0.0)**
+- ✅ OWASP-aligned checklist (injection, auth, access control, data exposure, XXE, XSS/CSRF, SSRF, path traversal, crypto, dependencies)
+- ✅ Aligned with `shared-standards/il5-security-baseline.md`
+
+**Benchmark Agent (v1.0.0)**
+- ✅ Rigorous benchmark design methodology (warm-up, repetitions, variance reporting)
+- ✅ Per-language tool guidance (timeit, JMH, BenchmarkDotNet, criterion, `go test -bench`)
+
+**Pester Test Agent (v1.0.0)**
+- ✅ Pester v5 test structure, mocking, and assertion conventions
+- ✅ Checklist for detecting false-confidence tests in existing suites
+
+**Stress Test Agent (v1.0.0)**
+- ✅ Load/stress/soak/breakpoint testing methodology
+- ✅ Explicit authorization/safety constraints against unauthorized DoS
+
+---
+
 ## [1.0.0] - 2025-01-15
 
 ### Added
