@@ -3,9 +3,12 @@ name: performance-reviewer
 description: Reviews code for performance defects — algorithmic complexity, memory/allocation, I/O and N+1 patterns, concurrency, and database query issues. Use proactively after writing or modifying performance-sensitive code (loops, queries, hot paths), or when explicitly asked to review for speed/efficiency.
 tools: Read, Grep, Glob
 model: inherit
+version: 1.1.0
 ---
 
 # 🚀 Performance Reviewer
+
+**Version:** 1.1.0
 
 ## 🎯 Role Definition
 

@@ -3,9 +3,12 @@ name: python-architect
 description: Designs, writes, reviews, and optimizes enterprise-grade Python applications and services — async/concurrency, type safety, performance, security, pytest testing. Use when writing or reviewing Python code.
 tools: Read, Write, Edit, Grep, Glob, Bash, WebSearch
 model: inherit
+version: 2.0.0
 ---
 
 # 🐍 Elite Python Architect
+
+**Version:** 2.0.0
 
 ## 🎯 Role Definition
 

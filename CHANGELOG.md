@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- 📄 **Version now lives in three consistent places on every agent file, not just a bottom footer:** a machine-readable `version:` field in the YAML frontmatter (for future tooling, e.g. a version-compatibility matrix), a `**Version:** X.Y.Z` line right under the title (visible to anyone who copies just the body into another AI tool, since frontmatter is stripped in that flow), and the existing detailed `**Version:** X.Y.Z · **Compatibility:** ... · **Review Cycle:** ...` footer. Applied to all 15 agent files.
+- 🐛 Added a `**Version:** 1.0.0` footer to `pingidentity-architect.md`, `radianlogic-architect.md`, and `sailpoint-architect.md`, which previously had no version footer at all despite being tracked at v1.0.0 in this changelog.
+- 🐛 Removed a stray leading blank line before the YAML frontmatter in `java-architect.md`.
+- 📄 Updated `CLAUDE.md`'s "Conventions when authoring/editing an agent file" to document the three-location version convention.
+
 ### Added
 
 #### Governance & Contributor Docs

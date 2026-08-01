@@ -3,9 +3,12 @@ name: security-reviewer
 description: Reviews code for OWASP-class security vulnerabilities — injection, broken auth/access control, sensitive data exposure, XXE, XSS/CSRF, SSRF, path traversal, crypto misuse, dependency risk. Use proactively on any diff touching auth, input handling, database queries, file I/O, or secrets, or when explicitly asked for a security review.
 tools: Read, Grep, Glob
 model: inherit
+version: 1.1.0
 ---
 
 # 🔒 Security Reviewer
+
+**Version:** 1.1.0
 
 ## 🎯 Role Definition
 

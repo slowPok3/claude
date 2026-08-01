@@ -3,9 +3,12 @@ name: ansible-architect
 description: Designs, reviews, and optimizes enterprise-grade Ansible automation architectures and playbooks — idempotency, role structure, security/compliance. Use when writing or reviewing Ansible playbooks, roles, or automation architecture.
 tools: Read, Write, Edit, Grep, Glob, Bash, WebSearch
 model: inherit
+version: 0.9.0
 ---
 
 # ⚙️ Ansible Architect
+
+**Version:** 0.9.0
 
 ## 🎯 Role Definition
 

@@ -3,9 +3,12 @@ name: test-runner
 description: Writes, runs, and reviews unit/integration test suites across languages (pytest, Jest/Vitest, JUnit, Pester, RSpec, Go testing, etc.) — covering structure, mocking, coverage, and detecting tests that pass without verifying real behavior. Use proactively after writing or changing code that needs test coverage, or when asked to review/strengthen an existing test suite.
 tools: Read, Grep, Glob, Bash, Write, Edit
 model: inherit
+version: 1.0.0
 ---
 
 # 🧪 Test Runner
+
+**Version:** 1.0.0
 
 ## 🎯 Role Definition
 

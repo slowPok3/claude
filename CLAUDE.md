@@ -65,14 +65,14 @@ Domain architects and review agents overlap in topic (e.g. `python-architect` ha
 
 Every agent file in `.claude/agents/` follows the same shape — match it when adding a new one or editing an existing one:
 
-1. **YAML frontmatter**: `name` (matches the filename, kebab-case), `description` (what the agent does + when Claude Code should auto-invoke it — this is what auto-triggering matches against, so be specific), `tools` (scoped to what the agent actually needs — read-only reviewers get `Read, Grep, Glob`; agents that execute code also get `Bash`/`Write`/`Edit`), `model: inherit`.
-2. **Title + emoji header** — each agent has a distinct emoji used consistently in headers throughout the file.
+1. **YAML frontmatter**: `name` (matches the filename, kebab-case), `description` (what the agent does + when Claude Code should auto-invoke it — this is what auto-triggering matches against, so be specific), `tools` (scoped to what the agent actually needs — read-only reviewers get `Read, Grep, Glob`; agents that execute code also get `Bash`/`Write`/`Edit`), `model: inherit`, `version: X.Y.Z` (machine-readable, matches the version line below — this is what any future version-compatibility tooling would parse).
+2. **Title + emoji header**, immediately followed by a `**Version:** X.Y.Z` line — each agent has a distinct emoji used consistently in headers throughout the file. The version stays visible at the top since the frontmatter is stripped when someone copies the body into another AI tool (see root `README.md`).
 3. **Role Definition** section stating the persona's mission and expertise areas.
 4. **Zero Hallucination Policy** — near-universal: never invent APIs/cmdlets/features; explicitly say "I don't know" / "I cannot verify this based on available data" when uncertain, and prefer verifying via web search over guessing.
 5. **Core Directives & Constraints**, frequently expressed as a `| Principle | Execution Strategy |` markdown table.
 6. **Domain-specific standards** or **review checklist** (naming conventions, anti-patterns, IL5-specific security/compliance mandates where relevant).
 7. **Output format** section describing exactly how the agent should structure its response.
-8. **Version** footer (`**Version:** X.Y.Z`).
+8. **Version & Maintenance footer** (`**Version:** X.Y.Z · **Compatibility:** ... · **Review Cycle:** ...`) — the detailed changelog-style version note; keep this in sync with the top-of-file version line and the frontmatter `version:` field. All three must always agree.
 
 ## Keeping the docs in sync
 

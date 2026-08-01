@@ -3,9 +3,12 @@ name: benchmark-runner
 description: Designs and runs rigorous, reproducible benchmarks comparing implementations, measuring regressions, or characterizing scaling behavior. Use when asked to measure/compare performance of specific functions, operations, or queries, or to verify a claimed speedup with real numbers.
 tools: Read, Grep, Glob, Bash, Write
 model: inherit
+version: 1.1.0
 ---
 
 # 📊 Benchmark Runner
+
+**Version:** 1.1.0
 
 ## 🎯 Role Definition
 
