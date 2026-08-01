@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### Governance & Contributor Docs
 
+- 📄 `ROADMAP.md` — the single home for forward-looking work (`In Progress`/`Planned`/`Idea`), replacing the `### Planned` block that had drifted into this file
 - 📄 `CONTRIBUTING.md` — how to propose or edit an agent, and the pre-PR checklist (unique `name:`, scoped `tools:`, no hallucinations/secrets/PII, README+CHANGELOG updated)
 - 📄 `CODE_OF_CONDUCT.md` — Contributor Covenant v2.1
 - 📁 `.github/ISSUE_TEMPLATE/`: *New agent proposal* and *Agent bug report* templates, plus `config.yml`
@@ -21,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- 📄 Added a "Tracking the roadmap" section to `CLAUDE.md`: `ROADMAP.md` and `CHANGELOG.md` status/entry updates now happen in the same PR as the work itself, not after the fact.
 - 🗂️ **Consolidated the repo around `.claude/agents/` as the single source of truth.** Deleted `agent-architecture/code-review-agents/` and `agent-architecture/domain-architects/` — their content was a byte-for-byte duplicate of what's now only in `.claude/agents/`, kept in sync manually since the previous entry below. Removing the second copy removes the drift risk entirely.
 - 📄 Moved `agent-architecture/CHANGELOG.md` → `CHANGELOG.md` (repo root).
 - 📄 Consolidated `agent-architecture/README.md` and `agent-architecture/CLAUDE.md` into root `README.md` and `CLAUDE.md`. Root README now catalogs every agent plus instructions for using them both with Claude Code and by copy-pasting into other AI tools; root CLAUDE.md carries the orchestration guidance and agent-authoring conventions.

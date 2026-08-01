@@ -10,13 +10,6 @@ in CHANGELOG) · `In Progress` (actively being worked, has an open branch/PR) ·
 
 ---
 
-## In Progress
-
-| Item | Status | Notes |
-|---|---|---|
-| Governance & contributor docs | In Progress | CONTRIBUTING.md, CODE_OF_CONDUCT.md, issue/PR templates, ADRs — on `claude/governance-docs`, awaiting review |
-| This roadmap tracking system | In Progress | `ROADMAP.md` + CLAUDE.md instructions to keep it current — same branch |
-
 ## Planned
 
 ### Agent library
