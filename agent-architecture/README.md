@@ -4,6 +4,8 @@
 
 This repository contains a comprehensive collection of **enterprise-grade system prompts** for AI agents specializing in various technical domains. Each prompt is designed to enforce best practices, security standards, and architectural excellence.
 
+Every file — domain architects and code-review agents alike — is now formatted as a **Claude Code subagent** (YAML frontmatter with `name`/`description`/`tools`/`model`, see [Using These as Claude Code Subagents](#-using-these-as-claude-code-subagents)). This repo's root `.claude/agents/` holds live copies of all of them, so opening this repo (or a project created from it as a template) in Claude Code makes every agent below immediately available.
+
 ---
 
 ## 📁 Repository Structure
@@ -28,7 +30,7 @@ agent-architecture/
 │   ├── coding-style-guide.md
 │   ├── il5-security-baseline.md
 │   └── mermaid-patterns.md
-├── Principal-Solution-Architect.md  # Meta-architect for cross-domain solutions
+├── Principal-Solution-Architect.md  # Meta-architect persona for pasting into tools without native subagent orchestration (not installed as a Claude Code subagent — see root CLAUDE.md)
 ├── README.md                   # This file
 ├── CHANGELOG.md               # Version history
 └── .gitignore                 # Git ignore rules
@@ -104,6 +106,8 @@ agent-architecture/
 ## 🔍 Code Review Agents
 
 Unlike the domain architects above (broad, generative personas for a technology), these are narrow, review-focused specialists — each one inspects existing code for a single class of defect and reports concrete, cited findings rather than generating new solutions.
+
+> **Note on overlap with domain architects:** No `name:` collisions exist between the two sets, so both load side by side without conflict. There is, however, *topical* overlap — e.g. `python-architect` includes its own performance/security/testing guidance for Python specifically, alongside the language-agnostic `performance-reviewer`/`security-reviewer`/`test-runner`. When both could plausibly match a request (e.g. "review this Python function for performance"), Claude Code picks based on description specificity, and you can always name the agent explicitly. In practice: reach for the domain architect when the work is Python/Java/GitLab/etc.-specific end-to-end; reach for a code-review agent when you want the same checklist applied consistently across any language.
 
 These files are formatted as **Claude Code subagents** (YAML frontmatter with `name`/`description`/`tools` + the persona body). Drop any of them into `.claude/agents/` (project-level) or `~/.claude/agents/` (user-level, all projects) to make them available in Claude Code — see [Using These as Claude Code Subagents](#-using-these-as-claude-code-subagents) below.
 

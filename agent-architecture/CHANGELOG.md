@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- 🔁 Converted all 10 `domain-architects/*.md` files to Claude Code subagent format (added `name`/`description`/`tools`/`model` YAML frontmatter), matching the code-review-agents conversion below
+- 🔁 Stripped a stray UTF-8 BOM from `powerShell-architect.md` that would have broken YAML frontmatter parsing
+- 📁 Root `.claude/agents/` now holds working copies of 15 agents (5 code-review + 10 domain architects) for direct use as a Claude Code project template; confirmed no `name:` collisions among them
+- 🚫 `Principal-Solution-Architect.md` was converted to subagent frontmatter but then **removed from `.claude/agents/`** — a Claude Code subagent cannot invoke other subagents, so its core "decompose → delegate → synthesize" behavior can't actually function as one. The file remains in `agent-architecture/` for its original use case (pasting as a system prompt into tools without native subagent orchestration).
+- 📄 Added root `CLAUDE.md`: rewrites the Principal Solution Architect's orchestration guidance, cross-cutting standards (no hallucination/secrets/PII, least privilege, error handling, modern tooling), and domain-architect-vs-review-agent guidance as direct instructions for Claude Code's main session, which is what actually performs multi-agent orchestration in this repo
+
 - 🔁 Renamed and reformatted all `code-review-agents/*.md` files as **Claude Code subagents** (added `name`/`description`/`tools`/`model` YAML frontmatter) so they can be dropped directly into `.claude/agents/` or `~/.claude/agents/`
 - 🔁 `performance-review-agent.md` → `performance-reviewer.md`
 - 🔁 `security-review-agent.md` → `security-reviewer.md`
