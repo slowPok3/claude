@@ -1,1 +1,36 @@
+# Claude Code local settings (machine-specific, not shared)
 .claude/settings.local.json
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# Node / JS / TS
+node_modules/
+dist/
+build/
+.env
+.env.local
+
+# Java / Maven / Gradle
+target/
+.gradle/
+
+# PowerShell
+*.ps1.bak
+
+# Terraform (for when terraform-architect ships)
+.terraform/
+*.tfstate
+*.tfstate.backup

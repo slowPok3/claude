@@ -2,6 +2,8 @@
 
 Guidance for Claude Code when working in this repository or in any project created from it as a template.
 
+> **If you created your project from this repo via "Use this template":** the section below describes *this* repo (an agent-prompt library with no source code). The moment you add real application code, that description stops being true — rewrite "What this repo is" to describe your actual project. The agent roster, orchestration guidance, and standards further down stay valid regardless of what you're building; only this opening section is specific to the template's origin repo.
+
 ## What this repo is
 
 Not a software project — there is no source code, build system, package manifest, linter, or test suite. It's a library of AI agent system prompts. "Development" here means editing/authoring Markdown agent files and keeping `README.md` and `CHANGELOG.md` in sync with them.
@@ -25,8 +27,11 @@ agent-architecture/
     ├── coding-style-guide.md           # populated
     ├── il5-security-baseline.md        # empty placeholder — not yet written
     └── mermaid-patterns.md             # empty placeholder — not yet written
+docs/
+├── adr/                                 # architecture decision records
+└── internal-roadmap.md                  # THIS repo's own backlog — not part of the template payload, delete after templating
 CLAUDE.md                               # this file
-ROADMAP.md                              # forward-looking only — what's not shipped yet
+ROADMAP.md                              # template stub, ships empty — the reusable pattern, not our backlog
 CHANGELOG.md                            # historical record only — what already shipped
 README.md                               # catalog/index of agents, usage instructions
 ```
@@ -82,14 +87,15 @@ When adding a new agent or materially changing an existing one:
 
 ## Tracking the roadmap
 
-`ROADMAP.md` and `CHANGELOG.md` are deliberately separate and must not duplicate each other:
+There are **two roadmap-shaped files, and they track different things — do not merge their content:**
 
-- **`ROADMAP.md`** is the only place forward-looking work lives — status is one of `In Progress`, `Planned`, or `Idea`. Update it in the same change that starts, finishes, or re-scopes an item: move it between sections, or remove it entirely once it ships.
-- **`CHANGELOG.md`** is a historical record only — past tense, never edited after the fact except to correct a mistake. When a roadmap item ships, it moves *out* of `ROADMAP.md` and gets its own entry under `## [Unreleased]` in `CHANGELOG.md` in the same PR.
+- **`docs/internal-roadmap.md`** is this specific repo's own backlog (new agents to add, placeholders to fill in, CI to set up). It exists because we're actively developing this agent library, and it is explicitly *not* part of the template payload — anyone who templates this repo should delete it, since our backlog is noise to them.
+- **`ROADMAP.md`** (root) is the template deliverable: it ships empty except for the format/legend/instructions, so a new project can start filling in *its own* roadmap immediately without inheriting ours.
 
-If you finish a PR and either file wasn't touched, check whether it should have been before considering the work done — a roadmap item stuck on "In Progress" after its branch already merged is a broken tracking system, not a minor omission.
+Within whichever file applies, `CHANGELOG.md` is still the historical record — past tense, never edited after the fact except to correct a mistake. When a roadmap item ships, it moves *out* of the roadmap file and gets its own entry under `## [Unreleased]` in `CHANGELOG.md` in the same PR.
+
+If you finish a PR and neither roadmap file nor `CHANGELOG.md` was touched, check whether one should have been before considering the work done — an item stuck on "In Progress" after its branch already merged is a broken tracking system, not a minor omission.
 
 ## Known quirks
 
-- `.gitignore` does not contain ignore patterns — it currently holds a stray PowerShell snippet (`Set-Location ...; git status`). Be aware of this if editing it; don't assume it's doing normal gitignore work.
-- `agent-architecture/shared-standards/il5-security-baseline.md` and `mermaid-patterns.md` are intentionally empty placeholders, not accidentally-blank files.
+- `agent-architecture/shared-standards/il5-security-baseline.md` and `mermaid-patterns.md` are intentionally empty placeholders, not accidentally-blank files — see `docs/internal-roadmap.md` for the plan to fill them in.
