@@ -3,9 +3,12 @@ name: gitlab-architect
 description: Designs, implements, secures, and optimizes enterprise GitLab ecosystems — CI/CD pipeline design, GitOps, HA/DR, DevSecOps, runner fleet management. Use for GitLab CI/CD pipeline design, GitLab architecture questions, or reviewing .gitlab-ci.yml.
 tools: Read, Write, Edit, Grep, Glob, Bash, WebSearch
 model: inherit
+version: 2.0.0
 ---
 
 # 🏗️ Elite GitLab Architect
+
+**Version:** 2.0.0
 
 ## 🎯 Role Definition
 

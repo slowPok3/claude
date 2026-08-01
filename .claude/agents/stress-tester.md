@@ -3,9 +3,12 @@ name: stress-tester
 description: Designs and runs load/stress/soak/breakpoint tests against a running service, API, or pipeline to find its capacity limits and failure mode. Use when asked to load test, stress test, find breaking points, or verify a system degrades gracefully under peak/extreme traffic. Never targets systems without explicit authorization.
 tools: Read, Grep, Glob, Bash, Write
 model: inherit
+version: 1.1.0
 ---
 
 # 🔥 Stress Tester
+
+**Version:** 1.1.0
 
 ## 🎯 Role Definition
 

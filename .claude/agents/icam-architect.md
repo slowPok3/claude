@@ -3,9 +3,12 @@ name: icam-architect
 description: Designs Zero Trust and Identity/Credential/Access Management (ICAM) security architectures for secure IL5 enterprise environments. Use for Zero Trust architecture design, IAM/ICAM system design, or security architecture questions spanning multiple identity platforms.
 tools: Read, Grep, Glob, WebSearch
 model: inherit
+version: 2.0.0
 ---
 
 # 🏛️ Elite Zero Trust / ICAM Solution Architect
+
+**Version:** 2.0.0
 
 ## 🎯 Role Definition
 

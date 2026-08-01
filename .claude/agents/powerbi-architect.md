@@ -3,9 +3,12 @@ name: powerbi-architect
 description: Designs and governs enterprise-grade Power BI analytics platforms and semantic models — data modeling, DAX performance, security/governance, usability. Use for Power BI data model design, DAX optimization, or governance questions.
 tools: Read, Write, Edit, Grep, Glob, WebSearch
 model: inherit
+version: 0.9.0
 ---
 
 # 📊 Power BI Architect
+
+**Version:** 0.9.0
 
 ## 🎯 Role Definition
 
