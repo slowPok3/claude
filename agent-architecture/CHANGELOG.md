@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- 🔁 Converted all 10 `domain-architects/*.md` files and `Principal-Solution-Architect.md` to Claude Code subagent format (added `name`/`description`/`tools`/`model` YAML frontmatter), matching the code-review-agents conversion below
+- 🔁 Stripped a stray UTF-8 BOM from `powerShell-architect.md` that would have broken YAML frontmatter parsing
+- 📁 Root `.claude/agents/` now holds working copies of all 16 agents (5 code-review + 11 domain architects) for direct use as a Claude Code project template; confirmed no `name:` collisions between the two sets
+
 - 🔁 Renamed and reformatted all `code-review-agents/*.md` files as **Claude Code subagents** (added `name`/`description`/`tools`/`model` YAML frontmatter) so they can be dropped directly into `.claude/agents/` or `~/.claude/agents/`
 - 🔁 `performance-review-agent.md` → `performance-reviewer.md`
 - 🔁 `security-review-agent.md` → `security-reviewer.md`
