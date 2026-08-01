@@ -48,6 +48,7 @@ Once something here ships, it moves out of this file and into
 ### Repo operations
 | Item | Notes |
 |---|---|
+| Delete 6 merged feature branches on GitHub | Manual labor — this session's git proxy can't delete remote refs (403) and the GitHub MCP server has no branch-delete tool. All fully merged into `main`, safe to remove via GitHub UI: `claude/agent-version-frontmatter`, `claude/internal-roadmap-and-template-readiness`, `claude/code-review-agents-1l1190`, `claude/consolidate-agent-library`, `claude/governance-docs`, `claude/repo-template-setup` |
 | Re-check collaborator / branch-protection settings | Repo went public recently; worth confirming `main` is protected as expected |
 | Validate the template flow end-to-end | Spin up one real project from "Use this template," confirm all 15 agents auto-load and the new README section actually makes sense from a fresh clone |
 
