@@ -49,6 +49,12 @@ Every file under `.claude/agents/` is plain Markdown: a YAML frontmatter block (
 
 For cross-domain work in a tool without native orchestration, use **[`agent-architecture/Principal-Solution-Architect.md`](./agent-architecture/Principal-Solution-Architect.md)** as your system prompt — it's a meta-orchestrator persona designed to decompose a request and reason through multiple domains in a single conversation. (This is the one agent that's deliberately *not* in `.claude/agents/`, since Claude Code already does real multi-agent orchestration natively and doesn't need a persona simulating it.)
 
+## Contributing
+
+Found an agent giving outdated or wrong guidance? Want to propose a new one? See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for the process and the checklist a new/edited agent file needs to pass. This is a public repo and participation is governed by our [Code of Conduct](./CODE_OF_CONDUCT.md).
+
+Structural decisions (why something is organized the way it is, not just what changed) are recorded in [`docs/adr/`](./docs/adr/). What's not done yet lives in [`ROADMAP.md`](./ROADMAP.md); what already shipped lives in [`CHANGELOG.md`](./CHANGELOG.md) — the two never overlap.
+
 ## Repository structure
 
 ```
@@ -59,7 +65,14 @@ agent-architecture/
     ├── coding-style-guide.md
     ├── il5-security-baseline.md        # placeholder
     └── mermaid-patterns.md             # placeholder
+docs/adr/                               # architecture decision records
+.github/
+├── ISSUE_TEMPLATE/                     # new-agent proposal, agent bug report
+└── PULL_REQUEST_TEMPLATE.md
 CLAUDE.md                               # guidance for Claude Code working in/from this repo
-CHANGELOG.md                            # version history
+CONTRIBUTING.md                         # how to propose/edit an agent, PR checklist
+CODE_OF_CONDUCT.md                      # Contributor Covenant v2.1
+ROADMAP.md                              # forward-looking only — what's not shipped yet
+CHANGELOG.md                            # historical record only — what already shipped
 README.md                               # this file
 ```

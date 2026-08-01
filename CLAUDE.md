@@ -26,7 +26,8 @@ agent-architecture/
     ├── il5-security-baseline.md        # empty placeholder — not yet written
     └── mermaid-patterns.md             # empty placeholder — not yet written
 CLAUDE.md                               # this file
-CHANGELOG.md                            # version history
+ROADMAP.md                              # forward-looking only — what's not shipped yet
+CHANGELOG.md                            # historical record only — what already shipped
 README.md                               # catalog/index of agents, usage instructions
 ```
 
@@ -78,6 +79,15 @@ Every agent file in `.claude/agents/` follows the same shape — match it when a
 When adding a new agent or materially changing an existing one:
 - Add/update its entry in the appropriate table in `README.md`.
 - Add a version entry for it in `CHANGELOG.md` (this repo tracks a semver per individual agent, separate from the repo's overall version).
+
+## Tracking the roadmap
+
+`ROADMAP.md` and `CHANGELOG.md` are deliberately separate and must not duplicate each other:
+
+- **`ROADMAP.md`** is the only place forward-looking work lives — status is one of `In Progress`, `Planned`, or `Idea`. Update it in the same change that starts, finishes, or re-scopes an item: move it between sections, or remove it entirely once it ships.
+- **`CHANGELOG.md`** is a historical record only — past tense, never edited after the fact except to correct a mistake. When a roadmap item ships, it moves *out* of `ROADMAP.md` and gets its own entry under `## [Unreleased]` in `CHANGELOG.md` in the same PR.
+
+If you finish a PR and either file wasn't touched, check whether it should have been before considering the work done — a roadmap item stuck on "In Progress" after its branch already merged is a broken tracking system, not a minor omission.
 
 ## Known quirks
 

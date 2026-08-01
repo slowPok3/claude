@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the Agent Architecture repository will be documented in this file.
+All notable changes to the Agent Architecture repository will be documented in this file. This is a historical record only — for what's not done yet and its current status, see [`ROADMAP.md`](./ROADMAP.md).
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -8,6 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ---
 
 ## [Unreleased]
+
+### Added
+
+#### Governance & Contributor Docs
+
+- 📄 `CONTRIBUTING.md` — how to propose or edit an agent, and the pre-PR checklist (unique `name:`, scoped `tools:`, no hallucinations/secrets/PII, README+CHANGELOG updated)
+- 📄 `CODE_OF_CONDUCT.md` — Contributor Covenant v2.1
+- 📁 `.github/ISSUE_TEMPLATE/`: *New agent proposal* and *Agent bug report* templates, plus `config.yml`
+- 📄 `.github/PULL_REQUEST_TEMPLATE.md` — mirrors the CONTRIBUTING.md checklist
+- 📁 `docs/adr/` — architecture decision records, seeded with ADR 0001 (adopt ADRs) and ADR 0002 (documents the `.claude/agents/` single-source-of-truth decision from the previous entry below)
 
 ### Changed
 
@@ -136,35 +146,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 📝 Coding style guide (placeholder)
 - 🔒 IL5 security baseline (placeholder)
 - 📊 Mermaid patterns (placeholder)
-
----
-
-## [Unreleased]
-
-### Planned
-
-#### Enhancements
-- [ ] Complete shared-standards documentation
-- [ ] Add Terraform architect
-- [ ] Add Kubernetes architect
-- [ ] Add Azure architect
-- [ ] Add AWS architect
-- [ ] Expand Java architect to production-ready
-- [ ] Expand SailPoint architect with detailed examples
-- [ ] Expand RadiantLogic architect with integration patterns
-
-#### Documentation
-- [ ] Add contribution guidelines (CONTRIBUTING.md)
-- [ ] Add code of conduct
-- [ ] Add issue templates
-- [ ] Add pull request templates
-- [ ] Add architecture decision records (ADRs)
-
-#### Quality Improvements
-- [ ] Add automated testing for code examples
-- [ ] Add linting for markdown files
-- [ ] Add CI/CD pipeline for validation
-- [ ] Add version compatibility matrix
 
 ---
 
