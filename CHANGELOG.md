@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the Agent Architecture repository will be documented in this file. This is a historical record only — for what's not done yet and its current status, see [`ROADMAP.md`](./ROADMAP.md).
+All notable changes to the Agent Architecture repository will be documented in this file. This is a historical record only — for what's not done yet and its current status, see [`docs/internal-roadmap.md`](./docs/internal-roadmap.md) (this repo's own backlog; root `ROADMAP.md` is a clean template stub, not a status list).
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -9,11 +9,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- 📄 **Version now lives in exactly two places on every agent file — down from as many as four.** A machine-readable `version:` field in the YAML frontmatter, plus a single `**Version:** X.Y.Z · **Compatibility:** ... · **Review Cycle:** ...` line right under the title (visible to anyone who copies just the body into another AI tool, since frontmatter is stripped in that flow). Applied to all 15 agent files.
+- 🐛 Three files (`gitlab-architect.md`, `python-architect.md`, `powershell-architect.md`) had a *4th* version mention in a `### Major Changes in vX.X.X` section, duplicating what `CHANGELOG.md` already tracks per-agent — deleted, since two files disagreeing about the same number is exactly the drift risk this convention exists to prevent.
+- 🐛 Deleted the separate bottom "Version & Maintenance" footer from every file that had one (`ansible-architect.md`, `gitlab-architect.md`, `icam-architect.md`, `java-architect.md`, `powerbi-architect.md`, `powershell-architect.md`, `python-architect.md`) — its Compatibility/Review Cycle content was folded into the single top-of-file version line instead of existing in two places.
+- 🐛 Added a version line to `pingidentity-architect.md`, `radianlogic-architect.md`, and `sailpoint-architect.md`, which previously had no version mention in the body at all despite being tracked at v1.0.0 in this changelog.
+- 🐛 Removed a stray leading blank line before the YAML frontmatter in `java-architect.md`.
+- 📄 Updated `CLAUDE.md`'s "Conventions when authoring/editing an agent file" to document the two-location version convention and explicitly prohibit a third.
+
 ### Added
 
 #### Governance & Contributor Docs
 
-- 📄 `ROADMAP.md` — the single home for forward-looking work (`In Progress`/`Planned`/`Idea`), replacing the `### Planned` block that had drifted into this file
+- 📄 `ROADMAP.md` — replaced the `### Planned` block that had drifted into this file. Later split (same Unreleased section, see below) into an empty template stub plus `docs/internal-roadmap.md` for this repo's own backlog.
 - 📄 `CONTRIBUTING.md` — how to propose or edit an agent, and the pre-PR checklist (unique `name:`, scoped `tools:`, no hallucinations/secrets/PII, README+CHANGELOG updated)
 - 📄 `CODE_OF_CONDUCT.md` — Contributor Covenant v2.1
 - 📁 `.github/ISSUE_TEMPLATE/`: *New agent proposal* and *Agent bug report* templates, plus `config.yml`
@@ -22,7 +31,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- 📄 Added a "Tracking the roadmap" section to `CLAUDE.md`: `ROADMAP.md` and `CHANGELOG.md` status/entry updates now happen in the same PR as the work itself, not after the fact.
+- 🗂️ **Split roadmap tracking into a template stub and an internal backlog.** `ROADMAP.md` (root) now ships empty except for format/legend/instructions — the reusable template artifact. This repo's own backlog (new agents, placeholders, CI) moved to `docs/internal-roadmap.md`, explicitly out of the template payload. See ADR 0003.
+- 📄 Rewrote `.gitignore` with real cross-language ignore patterns (Python/Node/Java/PowerShell/Terraform + editor/OS cruft), replacing a one-line entry that only ignored `.claude/settings.local.json`. The previously-documented "stray PowerShell snippet" quirk in `CLAUDE.md` was stale/incorrect and has been removed.
+- 📄 Added a note at the top of `CLAUDE.md` telling template users to rewrite "What this repo is" once they add real application code, and a "After you use this template" section to `README.md` covering that plus deleting `docs/internal-roadmap.md`, trimming unused agents, and resetting `CHANGELOG.md`.
+- 📄 Added a "Tracking the roadmap" section to `CLAUDE.md`: `ROADMAP.md`/`docs/internal-roadmap.md` and `CHANGELOG.md` status/entry updates now happen in the same PR as the work itself, not after the fact.
 - 🗂️ **Consolidated the repo around `.claude/agents/` as the single source of truth.** Deleted `agent-architecture/code-review-agents/` and `agent-architecture/domain-architects/` — their content was a byte-for-byte duplicate of what's now only in `.claude/agents/`, kept in sync manually since the previous entry below. Removing the second copy removes the drift risk entirely.
 - 📄 Moved `agent-architecture/CHANGELOG.md` → `CHANGELOG.md` (repo root).
 - 📄 Consolidated `agent-architecture/README.md` and `agent-architecture/CLAUDE.md` into root `README.md` and `CLAUDE.md`. Root README now catalogs every agent plus instructions for using them both with Claude Code and by copy-pasting into other AI tools; root CLAUDE.md carries the orchestration guidance and agent-authoring conventions.

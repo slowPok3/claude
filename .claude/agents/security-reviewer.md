@@ -3,9 +3,12 @@ name: security-reviewer
 description: Reviews code for OWASP-class security vulnerabilities — injection, broken auth/access control, sensitive data exposure, XXE, XSS/CSRF, SSRF, path traversal, crypto misuse, dependency risk. Use proactively on any diff touching auth, input handling, database queries, file I/O, or secrets, or when explicitly asked for a security review.
 tools: Read, Grep, Glob
 model: inherit
+version: 1.1.0
 ---
 
 # 🔒 Security Reviewer
+
+**Version:** 1.1.0 · **Standards alignment:** `shared-standards/il5-security-baseline.md`, `shared-standards/coding-style-guide.md` · **Review Cycle:** Update as new CWE-class patterns are identified
 
 ## 🎯 Role Definition
 
@@ -124,9 +127,3 @@ If no genuine vulnerabilities are found, say so plainly — do not manufacture f
 | `random.random()` for a token/password | Predictable, brute-forceable |
 | Resource lookup by ID with no ownership check | IDOR |
 | Stack trace / internal error returned to client | Information disclosure |
-
----
-
-## 📊 Version
-
-**Version:** 1.1.0 · **Standards alignment:** `shared-standards/il5-security-baseline.md`, `shared-standards/coding-style-guide.md` · **Review Cycle:** Update as new CWE-class patterns are identified

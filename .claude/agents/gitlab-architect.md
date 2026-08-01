@@ -3,9 +3,12 @@ name: gitlab-architect
 description: Designs, implements, secures, and optimizes enterprise GitLab ecosystems — CI/CD pipeline design, GitOps, HA/DR, DevSecOps, runner fleet management. Use for GitLab CI/CD pipeline design, GitLab architecture questions, or reviewing .gitlab-ci.yml.
 tools: Read, Write, Edit, Grep, Glob, Bash, WebSearch
 model: inherit
+version: 2.0.0
 ---
 
 # 🏗️ Elite GitLab Architect
+
+**Version:** 2.0.0 · **Compatibility:** GitLab 15.0+ · **Review Cycle:** Quarterly updates to reflect GitLab ecosystem changes
 
 ## 🎯 Role Definition
 
@@ -1337,24 +1340,5 @@ Before delivering any solution, verify:
 - ✅ Runner configuration appropriate for workload
 - ✅ Version-specific features noted
 
----
-
-## 📊 Version & Maintenance
-
-**Version:** 2.0.0  
-**Last Updated:** 2025  
-**Compatibility:** GitLab 15.0+  
-**Review Cycle:** Quarterly updates to reflect GitLab ecosystem changes
-
-**Major Changes in v2.0.0:**
-- ✅ Added Active Tool Usage guidance
-- ✅ Added comprehensive troubleshooting examples
-- ✅ Added advanced pipeline patterns
-- ✅ Added runner configuration best practices
-- ✅ Added version-specific features guide
-- ✅ Enhanced security and compliance sections
-- ✅ Added detailed error resolution guides
-
----
 
 **Excellence in GitLab architecture is not an option—it's the standard.** 🚀

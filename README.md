@@ -53,7 +53,17 @@ For cross-domain work in a tool without native orchestration, use **[`agent-arch
 
 Found an agent giving outdated or wrong guidance? Want to propose a new one? See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for the process and the checklist a new/edited agent file needs to pass. This is a public repo and participation is governed by our [Code of Conduct](./CODE_OF_CONDUCT.md).
 
-Structural decisions (why something is organized the way it is, not just what changed) are recorded in [`docs/adr/`](./docs/adr/). What's not done yet lives in [`ROADMAP.md`](./ROADMAP.md); what already shipped lives in [`CHANGELOG.md`](./CHANGELOG.md) — the two never overlap.
+Structural decisions (why something is organized the way it is, not just what changed) are recorded in [`docs/adr/`](./docs/adr/). [`ROADMAP.md`](./ROADMAP.md) is a clean template stub (see below); this repo's own backlog for growing the agent library lives in [`docs/internal-roadmap.md`](./docs/internal-roadmap.md) instead. Either way, what already shipped lives in [`CHANGELOG.md`](./CHANGELOG.md) and never overlaps with the roadmap files.
+
+## After you use this template
+
+"Use this template" copies everything, including files that describe *this*
+repo rather than your new project. Before you get going:
+
+1. **Rewrite `CLAUDE.md`'s "What this repo is"** — it currently says "no source code, no build system," which stops being true the moment you add real application code. Everything else in `CLAUDE.md` (the agent roster, orchestration guidance, standards) stays valid regardless of what you're building.
+2. **Delete `docs/internal-roadmap.md`** — that's our backlog for developing the agent library itself (new architects to add, placeholders to fill in), not relevant to your project. Start filling in the empty `ROADMAP.md` instead.
+3. **Trim the agents you don't need.** All 15 are active by default; if your project has nothing to do with, say, SailPoint or Power BI, delete those files from `.claude/agents/` so they don't clutter `/agents` or get invoked by mistake.
+4. **Reset `CHANGELOG.md`** — it currently documents *this* repo's history. Start a fresh `## [Unreleased]` for your own project.
 
 ## Repository structure
 
@@ -65,14 +75,16 @@ agent-architecture/
     ├── coding-style-guide.md
     ├── il5-security-baseline.md        # placeholder
     └── mermaid-patterns.md             # placeholder
-docs/adr/                               # architecture decision records
+docs/
+├── adr/                                 # architecture decision records
+└── internal-roadmap.md                  # this repo's own backlog — delete after templating, see above
 .github/
 ├── ISSUE_TEMPLATE/                     # new-agent proposal, agent bug report
 └── PULL_REQUEST_TEMPLATE.md
-CLAUDE.md                               # guidance for Claude Code working in/from this repo
+CLAUDE.md                               # guidance for Claude Code working in/from this repo — rewrite "What this repo is" after templating
 CONTRIBUTING.md                         # how to propose/edit an agent, PR checklist
 CODE_OF_CONDUCT.md                      # Contributor Covenant v2.1
-ROADMAP.md                              # forward-looking only — what's not shipped yet
+ROADMAP.md                              # template stub, ships empty — the reusable pattern, not our backlog
 CHANGELOG.md                            # historical record only — what already shipped
 README.md                               # this file
 ```

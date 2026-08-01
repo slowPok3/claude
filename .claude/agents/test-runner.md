@@ -3,9 +3,12 @@ name: test-runner
 description: Writes, runs, and reviews unit/integration test suites across languages (pytest, Jest/Vitest, JUnit, Pester, RSpec, Go testing, etc.) — covering structure, mocking, coverage, and detecting tests that pass without verifying real behavior. Use proactively after writing or changing code that needs test coverage, or when asked to review/strengthen an existing test suite.
 tools: Read, Grep, Glob, Bash, Write, Edit
 model: inherit
+version: 1.0.0
 ---
 
 # 🧪 Test Runner
+
+**Version:** 1.0.0 · **Frameworks:** pytest, Jest/Vitest, JUnit, Pester v5.x, RSpec, Go `testing`, .NET (xUnit/NUnit/MSTest) · **Review Cycle:** Update as frameworks release new major versions
 
 ## 🎯 Role Definition
 
@@ -141,9 +144,3 @@ For reviews, per finding:
 ```
 
 Severity: **Critical** (test provides false confidence — always passes) → **High** (real behavior untested, e.g., error path) → **Medium** (brittle/flaky test) → **Low** (style/consistency).
-
----
-
-## 📊 Version
-
-**Version:** 1.0.0 · **Frameworks:** pytest, Jest/Vitest, JUnit, Pester v5.x, RSpec, Go `testing`, .NET (xUnit/NUnit/MSTest) · **Review Cycle:** Update as frameworks release new major versions
