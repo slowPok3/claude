@@ -11,24 +11,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- 🔁 Converted all 10 `domain-architects/*.md` files to Claude Code subagent format (added `name`/`description`/`tools`/`model` YAML frontmatter), matching the code-review-agents conversion below
-- 🔁 Stripped a stray UTF-8 BOM from `powerShell-architect.md` that would have broken YAML frontmatter parsing
-- 📁 Root `.claude/agents/` now holds working copies of 15 agents (5 code-review + 10 domain architects) for direct use as a Claude Code project template; confirmed no `name:` collisions among them
-- 🚫 `Principal-Solution-Architect.md` was converted to subagent frontmatter but then **removed from `.claude/agents/`** — a Claude Code subagent cannot invoke other subagents, so its core "decompose → delegate → synthesize" behavior can't actually function as one. The file remains in `agent-architecture/` for its original use case (pasting as a system prompt into tools without native subagent orchestration).
-- 📄 Added root `CLAUDE.md`: rewrites the Principal Solution Architect's orchestration guidance, cross-cutting standards (no hallucination/secrets/PII, least privilege, error handling, modern tooling), and domain-architect-vs-review-agent guidance as direct instructions for Claude Code's main session, which is what actually performs multi-agent orchestration in this repo
-
-- 🔁 Renamed and reformatted all `code-review-agents/*.md` files as **Claude Code subagents** (added `name`/`description`/`tools`/`model` YAML frontmatter) so they can be dropped directly into `.claude/agents/` or `~/.claude/agents/`
-- 🔁 `performance-review-agent.md` → `performance-reviewer.md`
-- 🔁 `security-review-agent.md` → `security-reviewer.md`
-- 🔁 `benchmark-agent.md` → `benchmark-runner.md`
-- 🔁 `stress-test-agent.md` → `stress-tester.md`
-- 🔁 `pester-agent.md` → generalized and renamed to `test-runner.md` (was PowerShell/Pester-only; now framework-agnostic — detects and applies pytest, Jest/Vitest, JUnit, Pester, RSpec, Go `testing`, or .NET conventions per project, with Pester retained as one worked example)
+- 🗂️ **Consolidated the repo around `.claude/agents/` as the single source of truth.** Deleted `agent-architecture/code-review-agents/` and `agent-architecture/domain-architects/` — their content was a byte-for-byte duplicate of what's now only in `.claude/agents/`, kept in sync manually since the previous entry below. Removing the second copy removes the drift risk entirely.
+- 📄 Moved `agent-architecture/CHANGELOG.md` → `CHANGELOG.md` (repo root).
+- 📄 Consolidated `agent-architecture/README.md` and `agent-architecture/CLAUDE.md` into root `README.md` and `CLAUDE.md`. Root README now catalogs every agent plus instructions for using them both with Claude Code and by copy-pasting into other AI tools; root CLAUDE.md carries the orchestration guidance and agent-authoring conventions.
+- 📁 `agent-architecture/` now holds only what can't live in `.claude/agents/`: `Principal-Solution-Architect.md` (a cross-platform orchestrator persona, not a functional Claude Code subagent — see below) and `shared-standards/`.
+- 🔁 Converted all 10 domain-architect files to Claude Code subagent format (added `name`/`description`/`tools`/`model` YAML frontmatter), matching the code-review-agents conversion below.
+- 🔁 Stripped a stray UTF-8 BOM from `powershell-architect.md` that would have broken YAML frontmatter parsing.
+- 🚫 `Principal-Solution-Architect.md` was converted to subagent frontmatter but then **kept out of `.claude/agents/`** — a Claude Code subagent cannot invoke other subagents, so its core "decompose → delegate → synthesize" behavior can't actually function as one. The file stays in `agent-architecture/` for its original use case (pasting as a system prompt into tools without native subagent orchestration).
+- 📄 Added root `CLAUDE.md`: rewrites the Principal Solution Architect's orchestration guidance, cross-cutting standards (no hallucination/secrets/PII, least privilege, error handling, modern tooling), and domain-architect-vs-review-agent guidance as direct instructions for Claude Code's main session, which is what actually performs multi-agent orchestration in this repo.
+- 🔁 Renamed and reformatted all code-review agent files as **Claude Code subagents** (added `name`/`description`/`tools`/`model` YAML frontmatter):
+  - `performance-review-agent.md` → `performance-reviewer.md`
+  - `security-review-agent.md` → `security-reviewer.md`
+  - `benchmark-agent.md` → `benchmark-runner.md`
+  - `stress-test-agent.md` → `stress-tester.md`
+  - `pester-agent.md` → generalized and renamed to `test-runner.md` (was PowerShell/Pester-only; now framework-agnostic — detects and applies pytest, Jest/Vitest, JUnit, Pester, RSpec, Go `testing`, or .NET conventions per project, with Pester retained as one worked example)
+- 📁 `.claude/agents/` now holds all 15 agents (5 code-review + 10 domain architects) for direct use as a Claude Code project template; confirmed no `name:` collisions among them.
 
 ### Added
 
 #### Code Review Agents
 
-- 📁 New `code-review-agents/` directory for narrow, review-focused (not generative) specialist prompts, each usable as a Claude Code subagent
+- 📁 Added 5 narrow, review-focused (not generative) specialist prompts, each usable as a Claude Code subagent
 
 **Performance Reviewer (v1.1.0)**
 - ✅ Algorithmic complexity, memory/allocation, I/O, concurrency, and database query review checklists
