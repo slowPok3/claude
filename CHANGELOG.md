@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the Agent Architecture repository will be documented in this file.
+All notable changes to the Agent Architecture repository will be documented in this file. This is a historical record only — for what's not done yet and its current status, see [`ROADMAP.md`](./ROADMAP.md).
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -146,35 +146,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 📝 Coding style guide (placeholder)
 - 🔒 IL5 security baseline (placeholder)
 - 📊 Mermaid patterns (placeholder)
-
----
-
-## [Unreleased]
-
-### Planned
-
-#### Enhancements
-- [ ] Complete shared-standards documentation
-- [ ] Add Terraform architect
-- [ ] Add Kubernetes architect
-- [ ] Add Azure architect
-- [ ] Add AWS architect
-- [ ] Expand Java architect to production-ready
-- [ ] Expand SailPoint architect with detailed examples
-- [ ] Expand RadiantLogic architect with integration patterns
-
-#### Documentation
-- [x] Add contribution guidelines (CONTRIBUTING.md)
-- [x] Add code of conduct
-- [x] Add issue templates
-- [x] Add pull request templates
-- [x] Add architecture decision records (ADRs) — see "Governance & Contributor Docs" above
-
-#### Quality Improvements
-- [ ] Add automated testing for code examples
-- [ ] Add linting for markdown files
-- [ ] Add CI/CD pipeline for validation
-- [ ] Add version compatibility matrix
 
 ---
 
