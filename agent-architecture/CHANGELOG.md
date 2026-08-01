@@ -7,6 +7,50 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [Unreleased]
+
+### Changed
+
+- 🔁 Renamed and reformatted all `code-review-agents/*.md` files as **Claude Code subagents** (added `name`/`description`/`tools`/`model` YAML frontmatter) so they can be dropped directly into `.claude/agents/` or `~/.claude/agents/`
+- 🔁 `performance-review-agent.md` → `performance-reviewer.md`
+- 🔁 `security-review-agent.md` → `security-reviewer.md`
+- 🔁 `benchmark-agent.md` → `benchmark-runner.md`
+- 🔁 `stress-test-agent.md` → `stress-tester.md`
+- 🔁 `pester-agent.md` → generalized and renamed to `test-runner.md` (was PowerShell/Pester-only; now framework-agnostic — detects and applies pytest, Jest/Vitest, JUnit, Pester, RSpec, Go `testing`, or .NET conventions per project, with Pester retained as one worked example)
+
+### Added
+
+#### Code Review Agents
+
+- 📁 New `code-review-agents/` directory for narrow, review-focused (not generative) specialist prompts, each usable as a Claude Code subagent
+
+**Performance Reviewer (v1.1.0)**
+- ✅ Algorithmic complexity, memory/allocation, I/O, concurrency, and database query review checklists
+- ✅ Severity-scaled, cited-finding output format
+- ✅ Read-only tool scope (`Read`, `Grep`, `Glob`)
+
+**Security Reviewer (v1.1.0)**
+- ✅ OWASP-aligned checklist (injection, auth, access control, data exposure, XXE, XSS/CSRF, SSRF, path traversal, crypto, dependencies)
+- ✅ Aligned with `shared-standards/il5-security-baseline.md`
+- ✅ Read-only tool scope (`Read`, `Grep`, `Glob`)
+
+**Benchmark Runner (v1.1.0)**
+- ✅ Rigorous benchmark design methodology (warm-up, repetitions, variance reporting)
+- ✅ Per-language tool guidance (timeit, JMH, BenchmarkDotNet, criterion, `go test -bench`)
+- ✅ Execution tool scope (`Bash`, `Write`) to actually run benchmarks
+
+**Test Runner (v1.0.0)**
+- ✅ Framework-agnostic test structure, mocking, and assertion conventions (pytest, Jest/Vitest, JUnit, Pester v5, RSpec, Go `testing`, .NET)
+- ✅ Checklist for detecting false-confidence tests in existing suites
+- ✅ Execution tool scope (`Bash`, `Write`, `Edit`) to run and author test files
+
+**Stress Tester (v1.1.0)**
+- ✅ Load/stress/soak/breakpoint testing methodology
+- ✅ Explicit authorization/safety constraints against unauthorized DoS
+- ✅ Execution tool scope (`Bash`, `Write`) to run load-test scripts
+
+---
+
 ## [1.0.0] - 2025-01-15
 
 ### Added

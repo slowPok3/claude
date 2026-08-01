@@ -18,6 +18,12 @@ agent-architecture/
 │   ├── pingidentity-architect.md
 │   ├── sailpoint-architect.md
 │   └── radianLogic-architect.md
+├── code-review-agents/         # Focused code-review specialist system prompts
+│   ├── performance-reviewer.md
+│   ├── security-reviewer.md
+│   ├── benchmark-runner.md
+│   ├── test-runner.md
+│   └── stress-tester.md
 ├── shared-standards/           # Cross-domain standards and guidelines
 │   ├── coding-style-guide.md
 │   ├── il5-security-baseline.md
@@ -92,6 +98,49 @@ agent-architecture/
 - Performance benchmarks
 - Deprecation warnings for legacy modules
 - Complete coding standards
+
+---
+
+## 🔍 Code Review Agents
+
+Unlike the domain architects above (broad, generative personas for a technology), these are narrow, review-focused specialists — each one inspects existing code for a single class of defect and reports concrete, cited findings rather than generating new solutions.
+
+These files are formatted as **Claude Code subagents** (YAML frontmatter with `name`/`description`/`tools` + the persona body). Drop any of them into `.claude/agents/` (project-level) or `~/.claude/agents/` (user-level, all projects) to make them available in Claude Code — see [Using These as Claude Code Subagents](#-using-these-as-claude-code-subagents) below.
+
+#### 🚀 Performance Reviewer
+**File:** `code-review-agents/performance-reviewer.md`
+
+**Expertise:** Algorithmic complexity, memory/allocation patterns, I/O and N+1 query detection, concurrency/parallelism review, database query performance.
+
+#### 🔒 Security Reviewer
+**File:** `code-review-agents/security-reviewer.md`
+
+**Expertise:** OWASP-aligned vulnerability review — injection, broken auth/access control, sensitive data exposure, XXE, XSS/CSRF, SSRF, path traversal, cryptography misuse, dependency risk. Aligns with `shared-standards/il5-security-baseline.md`.
+
+#### 📊 Benchmark Runner
+**File:** `code-review-agents/benchmark-runner.md`
+
+**Expertise:** Designing and running rigorous, reproducible benchmarks (timeit, JMH, BenchmarkDotNet, criterion, etc.), fair A/B comparison methodology, honest statistical reporting.
+
+#### 🧪 Test Runner
+**File:** `code-review-agents/test-runner.md`
+
+**Expertise:** Writing and reviewing unit/integration test suites across languages (pytest, Jest/Vitest, JUnit, Pester, RSpec, Go `testing`, .NET) — structure, mocking, assertions, code coverage, and detecting tests that provide false confidence.
+
+#### 🔥 Stress Tester
+**File:** `code-review-agents/stress-tester.md`
+
+**Expertise:** Load/stress/soak/breakpoint testing design (`k6`, `locust`, `pgbench`, etc.), failure-mode analysis, and safe/authorized testing practices.
+
+---
+
+## 🤖 Using These as Claude Code Subagents
+
+1. Copy the desired `.md` file(s) into `.claude/agents/` in your project (shared with your team via git) or `~/.claude/agents/` (available to you across all projects).
+2. Claude Code will auto-invoke the matching agent when your request matches its `description` (e.g., editing an auth handler triggers `security-reviewer`), or you can call one explicitly: "use the performance-reviewer agent on this file."
+3. Run `/agents` in Claude Code to see all available agents and their tool scopes.
+
+Each agent's `tools:` frontmatter is scoped to what it actually needs — the two `-reviewer` agents are read-only (`Read`, `Grep`, `Glob`), while `benchmark-runner`, `test-runner`, and `stress-tester` also get `Bash`/`Write` since they execute code.
 
 ---
 
