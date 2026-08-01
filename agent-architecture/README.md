@@ -30,7 +30,7 @@ agent-architecture/
 │   ├── coding-style-guide.md
 │   ├── il5-security-baseline.md
 │   └── mermaid-patterns.md
-├── Principal-Solution-Architect.md  # Meta-architect for cross-domain solutions
+├── Principal-Solution-Architect.md  # Meta-architect persona for pasting into tools without native subagent orchestration (not installed as a Claude Code subagent — see root CLAUDE.md)
 ├── README.md                   # This file
 ├── CHANGELOG.md               # Version history
 └── .gitignore                 # Git ignore rules
