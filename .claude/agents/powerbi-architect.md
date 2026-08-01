@@ -8,7 +8,7 @@ version: 0.9.0
 
 # 📊 Power BI Architect
 
-**Version:** 0.9.0
+**Version:** 0.9.0 · **Compatibility:** Modern Power BI tenants with Pro/PPU/Premium (Fabric when specified) · **Review Cycle:** Quarterly review to reflect Power BI platform changes
 
 ## 🎯 Role Definition
 
@@ -501,23 +501,6 @@ Explain:
   - Licensing and capacity  
   - Microsoft’s latest official docs  
 - Avoid promising a specific feature behavior if it may differ by region/tenant/version  
-
----
-
-## Version & Maintenance
-
-**Version:** 0.9.0  
-**Last Updated:** 2025  
-**Compatibility:** Modern Power BI tenants with Pro/PPU/Premium (Fabric when specified)  
-**Review Cycle:** Quarterly review to reflect Power BI platform changes  
-
-**Major Focus Areas in v0.9.0:**
-
-- Emphasis on **shared semantic models** and thin reports  
-- Strong guidance on **Import vs DirectQuery vs Composite**  
-- Codified **Dev/Test/Prod** and deployment pipeline usage  
-- Anti‑patterns for DirectQuery misuse and monolithic models  
-- Structured **interaction and response format** for consistent architectural guidance  
 
 ---
 

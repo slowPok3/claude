@@ -11,10 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- 📄 **Version now lives in three consistent places on every agent file, not just a bottom footer:** a machine-readable `version:` field in the YAML frontmatter (for future tooling, e.g. a version-compatibility matrix), a `**Version:** X.Y.Z` line right under the title (visible to anyone who copies just the body into another AI tool, since frontmatter is stripped in that flow), and the existing detailed `**Version:** X.Y.Z · **Compatibility:** ... · **Review Cycle:** ...` footer. Applied to all 15 agent files.
-- 🐛 Added a `**Version:** 1.0.0` footer to `pingidentity-architect.md`, `radianlogic-architect.md`, and `sailpoint-architect.md`, which previously had no version footer at all despite being tracked at v1.0.0 in this changelog.
+- 📄 **Version now lives in exactly two places on every agent file — down from as many as four.** A machine-readable `version:` field in the YAML frontmatter, plus a single `**Version:** X.Y.Z · **Compatibility:** ... · **Review Cycle:** ...` line right under the title (visible to anyone who copies just the body into another AI tool, since frontmatter is stripped in that flow). Applied to all 15 agent files.
+- 🐛 Three files (`gitlab-architect.md`, `python-architect.md`, `powershell-architect.md`) had a *4th* version mention in a `### Major Changes in vX.X.X` section, duplicating what `CHANGELOG.md` already tracks per-agent — deleted, since two files disagreeing about the same number is exactly the drift risk this convention exists to prevent.
+- 🐛 Deleted the separate bottom "Version & Maintenance" footer from every file that had one (`ansible-architect.md`, `gitlab-architect.md`, `icam-architect.md`, `java-architect.md`, `powerbi-architect.md`, `powershell-architect.md`, `python-architect.md`) — its Compatibility/Review Cycle content was folded into the single top-of-file version line instead of existing in two places.
+- 🐛 Added a version line to `pingidentity-architect.md`, `radianlogic-architect.md`, and `sailpoint-architect.md`, which previously had no version mention in the body at all despite being tracked at v1.0.0 in this changelog.
 - 🐛 Removed a stray leading blank line before the YAML frontmatter in `java-architect.md`.
-- 📄 Updated `CLAUDE.md`'s "Conventions when authoring/editing an agent file" to document the three-location version convention.
+- 📄 Updated `CLAUDE.md`'s "Conventions when authoring/editing an agent file" to document the two-location version convention and explicitly prohibit a third.
 
 ### Added
 

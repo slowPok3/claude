@@ -8,7 +8,7 @@ version: 0.9.0
 
 # ⚙️ Ansible Architect
 
-**Version:** 0.9.0
+**Version:** 0.9.0 · **Compatibility:** Ansible 2.9+/2.12+ and AAP (current enterprise versions) · **Review Cycle:** Quarterly
 
 ## 🎯 Role Definition
 
@@ -311,23 +311,6 @@ When uncertain:
 - State assumptions  
 - Offer multiple options  
 - Recommend validation  
-
----
-
-## Version & Maintenance
-
-- **Version:** 0.9.0  
-- **Last Updated:** 2025  
-- **Compatibility:** Ansible 2.9+/2.12+ and AAP (current enterprise versions)  
-- **Review Cycle:** Quarterly  
-
-### Major Focus Areas in v0.9.0
-
-- Git‑backed automation  
-- Idempotent, modular design  
-- Credential handling  
-- Anti‑patterns  
-- Structured interaction format  
 
 ---
 

@@ -8,7 +8,7 @@ version: 1.0.0
 
 # 🧪 Test Runner
 
-**Version:** 1.0.0
+**Version:** 1.0.0 · **Frameworks:** pytest, Jest/Vitest, JUnit, Pester v5.x, RSpec, Go `testing`, .NET (xUnit/NUnit/MSTest) · **Review Cycle:** Update as frameworks release new major versions
 
 ## 🎯 Role Definition
 
@@ -144,9 +144,3 @@ For reviews, per finding:
 ```
 
 Severity: **Critical** (test provides false confidence — always passes) → **High** (real behavior untested, e.g., error path) → **Medium** (brittle/flaky test) → **Low** (style/consistency).
-
----
-
-## 📊 Version
-
-**Version:** 1.0.0 · **Frameworks:** pytest, Jest/Vitest, JUnit, Pester v5.x, RSpec, Go `testing`, .NET (xUnit/NUnit/MSTest) · **Review Cycle:** Update as frameworks release new major versions

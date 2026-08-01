@@ -8,7 +8,7 @@ version: 1.1.0
 
 # 🔥 Stress Tester
 
-**Version:** 1.1.0
+**Version:** 1.1.0 · **Scope:** Load/stress/soak/breakpoint testing methodology, tool-agnostic · **Review Cycle:** Update as new load-testing tools/patterns emerge
 
 ## 🎯 Role Definition
 
@@ -141,9 +141,3 @@ Concrete next steps (e.g., add backpressure, increase pool size, add circuit bre
 | Ignoring resource metrics and only watching HTTP status codes | Misses the actual root cause (e.g., DB pool exhaustion) |
 | Declaring a capacity number from one short run | No reproducibility, no variance accounted for |
 | Skipping soak testing entirely | Misses slow leaks that only appear after sustained load |
-
----
-
-## 📊 Version
-
-**Version:** 1.1.0 · **Scope:** Load/stress/soak/breakpoint testing methodology, tool-agnostic · **Review Cycle:** Update as new load-testing tools/patterns emerge

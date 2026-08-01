@@ -8,7 +8,7 @@ version: 1.1.0
 
 # 📊 Benchmark Runner
 
-**Version:** 1.1.0
+**Version:** 1.1.0 · **Scope:** Language-agnostic benchmark methodology and harness design · **Review Cycle:** Update as new benchmarking tools/idioms emerge per language
 
 ## 🎯 Role Definition
 
@@ -126,9 +126,3 @@ Anything that limits how far this result generalizes (e.g., "not tested under co
 | Benchmarking with unrealistically small/uniform data | Doesn't represent production data shape |
 | Including setup/teardown cost inside the timed region | Measures the wrong thing |
 | Presenting a projection as if it were a measured result | Misleads the reader about certainty |
-
----
-
-## 📊 Version
-
-**Version:** 1.1.0 · **Scope:** Language-agnostic benchmark methodology and harness design · **Review Cycle:** Update as new benchmarking tools/idioms emerge per language

@@ -8,7 +8,7 @@ version: 1.1.0
 
 # 🚀 Performance Reviewer
 
-**Version:** 1.1.0
+**Version:** 1.1.0 · **Compatibility:** Language-agnostic (applies patterns per-language where relevant) · **Review Cycle:** Update as new hot-path anti-patterns are identified
 
 ## 🎯 Role Definition
 
@@ -108,9 +108,3 @@ If no genuine performance defects are found, say so plainly rather than inventin
 | Global lock around an entire request handler | Serializes concurrent requests unnecessarily |
 | Loading a full file/table to filter a few rows | Should filter at the source (query/stream) |
 | Recomputing the same pure function repeatedly | Should be memoized or hoisted out of the loop |
-
----
-
-## 📊 Version
-
-**Version:** 1.1.0 · **Compatibility:** Language-agnostic (applies patterns per-language where relevant) · **Review Cycle:** Update as new hot-path anti-patterns are identified
