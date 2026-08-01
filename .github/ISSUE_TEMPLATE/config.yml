@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Contributing guide
+    url: https://github.com/slowPok3/claude/blob/main/CONTRIBUTING.md
+    about: Read this before proposing a new agent or reporting a bug.

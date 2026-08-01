@@ -9,6 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+#### Governance & Contributor Docs
+
+- 📄 `CONTRIBUTING.md` — how to propose or edit an agent, and the pre-PR checklist (unique `name:`, scoped `tools:`, no hallucinations/secrets/PII, README+CHANGELOG updated)
+- 📄 `CODE_OF_CONDUCT.md` — Contributor Covenant v2.1
+- 📁 `.github/ISSUE_TEMPLATE/`: *New agent proposal* and *Agent bug report* templates, plus `config.yml`
+- 📄 `.github/PULL_REQUEST_TEMPLATE.md` — mirrors the CONTRIBUTING.md checklist
+- 📁 `docs/adr/` — architecture decision records, seeded with ADR 0001 (adopt ADRs) and ADR 0002 (documents the `.claude/agents/` single-source-of-truth decision from the previous entry below)
+
 ### Changed
 
 - 🗂️ **Consolidated the repo around `.claude/agents/` as the single source of truth.** Deleted `agent-architecture/code-review-agents/` and `agent-architecture/domain-architects/` — their content was a byte-for-byte duplicate of what's now only in `.claude/agents/`, kept in sync manually since the previous entry below. Removing the second copy removes the drift risk entirely.
@@ -154,11 +164,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [ ] Expand RadiantLogic architect with integration patterns
 
 #### Documentation
-- [ ] Add contribution guidelines (CONTRIBUTING.md)
-- [ ] Add code of conduct
-- [ ] Add issue templates
-- [ ] Add pull request templates
-- [ ] Add architecture decision records (ADRs)
+- [x] Add contribution guidelines (CONTRIBUTING.md)
+- [x] Add code of conduct
+- [x] Add issue templates
+- [x] Add pull request templates
+- [x] Add architecture decision records (ADRs) — see "Governance & Contributor Docs" above
 
 #### Quality Improvements
 - [ ] Add automated testing for code examples
