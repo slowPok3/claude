@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- 🧹 Deleted the 6 feature branches from this session's cleanup work (`claude/agent-version-frontmatter`, `claude/code-review-agents-1l1190`, `claude/consolidate-agent-library`, `claude/governance-docs`, `claude/internal-roadmap-and-template-readiness`, `claude/repo-template-setup`) — all fully merged into `main`, no longer needed.
 - 📄 **Version now lives in exactly two places on every agent file — down from as many as four.** A machine-readable `version:` field in the YAML frontmatter, plus a single `**Version:** X.Y.Z · **Compatibility:** ... · **Review Cycle:** ...` line right under the title (visible to anyone who copies just the body into another AI tool, since frontmatter is stripped in that flow). Applied to all 15 agent files.
 - 🐛 Three files (`gitlab-architect.md`, `python-architect.md`, `powershell-architect.md`) had a *4th* version mention in a `### Major Changes in vX.X.X` section, duplicating what `CHANGELOG.md` already tracks per-agent — deleted, since two files disagreeing about the same number is exactly the drift risk this convention exists to prevent.
 - 🐛 Deleted the separate bottom "Version & Maintenance" footer from every file that had one (`ansible-architect.md`, `gitlab-architect.md`, `icam-architect.md`, `java-architect.md`, `powerbi-architect.md`, `powershell-architect.md`, `python-architect.md`) — its Compatibility/Review Cycle content was folded into the single top-of-file version line instead of existing in two places.
