@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- 🧩 `.claude/skills/add-agent/SKILL.md` — scaffolds a new `.claude/agents/` file (frontmatter, section shape, version line) matching this repo's established conventions, and walks the README/CHANGELOG update checklist. The one skill this repo ships, deliberately: everything else that might have become a skill is either a subagent's job (open-ended review/design work) or a standing `CLAUDE.md` instruction (roadmap hygiene, doc sync) — see `CLAUDE.md` for the reasoning.
+
 ### Changed
 
 - 🧹 Deleted the 6 feature branches from this session's cleanup work (`claude/agent-version-frontmatter`, `claude/code-review-agents-1l1190`, `claude/consolidate-agent-library`, `claude/governance-docs`, `claude/internal-roadmap-and-template-readiness`, `claude/repo-template-setup`) — all fully merged into `main`, no longer needed.

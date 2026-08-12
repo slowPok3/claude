@@ -17,10 +17,15 @@ Two families of subagent live here:
 
 There is no `principal-solution-architect` subagent — that role isn't needed. See "Acting as the orchestrator" below for why, and `agent-architecture/Principal-Solution-Architect.md` for the persona this replaces (kept for use in tools without native subagent orchestration).
 
+One **skill** also lives here: `.claude/skills/add-agent/`. Reach for a subagent when the work is open-ended and benefits from an isolated context (reviewing a file, designing a solution); reach for a skill when it's a fixed, repeatable procedure invoked by name. Adding a new agent to this library is the latter — see `.claude/skills/add-agent/SKILL.md` rather than re-deriving the process from this file each time.
+
 ## Repository structure
 
 ```
-.claude/agents/                         # single source of truth — all 15 subagents
+.claude/
+├── agents/                              # single source of truth — all 15 subagents
+└── skills/
+    └── add-agent/                       # scaffolds a new agent file + reminds README/CHANGELOG updates
 agent-architecture/
 ├── Principal-Solution-Architect.md     # cross-platform orchestrator persona, not a Claude Code subagent
 └── shared-standards/                   # cross-agent conventions
