@@ -11,7 +11,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- 🧩 `.claude/skills/add-agent/SKILL.md` — scaffolds a new `.claude/agents/` file (frontmatter, section shape, version line) matching this repo's established conventions, and walks the README/CHANGELOG update checklist. The one skill this repo ships, deliberately: everything else that might have become a skill is either a subagent's job (open-ended review/design work) or a standing `CLAUDE.md` instruction (roadmap hygiene, doc sync) — see `CLAUDE.md` for the reasoning.
+- 🧩 `.claude/skills/add-agent/SKILL.md` — scaffolds a new `.claude/agents/` file (frontmatter, section shape, version line) matching this repo's established conventions, and walks the README/CHANGELOG update checklist.
+- 🧩 `.claude/skills/trim-agents/SKILL.md` — for a project templated from this repo: figures out which of the 15 pre-installed agents are relevant to what it actually builds, confirms before deleting, and updates `README.md`'s catalog to match. Directly implements the "Trim the agents you don't need" step from README's "After you use this template" section instead of leaving it as unassisted manual work.
+- These are the only two skills this repo ships, deliberately: everything else that might have become a skill is either a subagent's job (open-ended review/design work) or a standing `CLAUDE.md` instruction (roadmap hygiene, doc sync) — see `CLAUDE.md` for the reasoning.
 
 ### Changed
 
