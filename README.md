@@ -38,6 +38,8 @@ Agents auto-invoke based on their `description` frontmatter, or call one explici
 
 There is no `principal-solution-architect` subagent. A Claude Code subagent can't invoke other subagents, so a meta-orchestrator subagent has no way to actually delegate — that job is inherently the main Claude Code session's, and its guidance lives directly in root `CLAUDE.md` instead.
 
+This repo also ships one **skill**: `.claude/skills/add-agent/`. Skills and subagents solve different problems — a subagent is an isolated-context delegate for open-ended work (review this file, run this benchmark), while a skill is a repeatable, invoke-by-name procedure. Adding a new agent to this library is exactly that: a fixed multi-step scaffold (frontmatter, section shape, README/CHANGELOG updates) you don't want to redo from memory each time. Ask Claude to add a new agent, or invoke `/add-agent` directly, and it walks the whole process.
+
 ## Using these with other AI platforms
 
 Every file under `.claude/agents/` is plain Markdown: a YAML frontmatter block (metadata Claude Code reads) followed by the actual system prompt. For ChatGPT, a fresh Claude.ai conversation, or any tool without native subagent orchestration:
@@ -68,7 +70,10 @@ repo rather than your new project. Before you get going:
 ## Repository structure
 
 ```
-.claude/agents/                         # single source of truth — all 15 subagents
+.claude/
+├── agents/                              # single source of truth — all 15 subagents
+└── skills/
+    └── add-agent/                       # scaffolds a new agent file + reminds README/CHANGELOG updates
 agent-architecture/
 ├── Principal-Solution-Architect.md     # cross-platform orchestrator persona (see above)
 └── shared-standards/                   # cross-agent conventions referenced when authoring/editing agents
