@@ -38,7 +38,10 @@ Agents auto-invoke based on their `description` frontmatter, or call one explici
 
 There is no `principal-solution-architect` subagent. A Claude Code subagent can't invoke other subagents, so a meta-orchestrator subagent has no way to actually delegate — that job is inherently the main Claude Code session's, and its guidance lives directly in root `CLAUDE.md` instead.
 
-This repo also ships one **skill**: `.claude/skills/add-agent/`. Skills and subagents solve different problems — a subagent is an isolated-context delegate for open-ended work (review this file, run this benchmark), while a skill is a repeatable, invoke-by-name procedure. Adding a new agent to this library is exactly that: a fixed multi-step scaffold (frontmatter, section shape, README/CHANGELOG updates) you don't want to redo from memory each time. Ask Claude to add a new agent, or invoke `/add-agent` directly, and it walks the whole process.
+This repo also ships two **skills**. Skills and subagents solve different problems — a subagent is an isolated-context delegate for open-ended work (review this file, run this benchmark), while a skill is a repeatable, invoke-by-name procedure:
+
+- `.claude/skills/add-agent/` — scaffolds a new agent file (frontmatter, section shape, README/CHANGELOG updates) matching this repo's conventions.
+- `.claude/skills/trim-agents/` — for a project templated from this repo: figures out which of the 15 pre-installed agents are actually relevant and helps remove the rest, so unused agents don't clutter `/agents` or auto-trigger on unrelated work.
 
 ## Using these with other AI platforms
 
@@ -64,7 +67,7 @@ repo rather than your new project. Before you get going:
 
 1. **Rewrite `CLAUDE.md`'s "What this repo is"** — it currently says "no source code, no build system," which stops being true the moment you add real application code. Everything else in `CLAUDE.md` (the agent roster, orchestration guidance, standards) stays valid regardless of what you're building.
 2. **Delete `docs/internal-roadmap.md`** — that's our backlog for developing the agent library itself (new architects to add, placeholders to fill in), not relevant to your project. Start filling in the empty `ROADMAP.md` instead.
-3. **Trim the agents you don't need.** All 15 are active by default; if your project has nothing to do with, say, SailPoint or Power BI, delete those files from `.claude/agents/` so they don't clutter `/agents` or get invoked by mistake.
+3. **Trim the agents you don't need.** All 15 are active by default; if your project has nothing to do with, say, SailPoint or Power BI, delete those files from `.claude/agents/` so they don't clutter `/agents` or get invoked by mistake. Run the `trim-agents` skill (or just ask Claude to help trim unused agents) instead of doing this by hand.
 4. **Reset `CHANGELOG.md`** — it currently documents *this* repo's history. Start a fresh `## [Unreleased]` for your own project.
 
 ## Repository structure
@@ -73,7 +76,8 @@ repo rather than your new project. Before you get going:
 .claude/
 ├── agents/                              # single source of truth — all 15 subagents
 └── skills/
-    └── add-agent/                       # scaffolds a new agent file + reminds README/CHANGELOG updates
+    ├── add-agent/                       # scaffolds a new agent file + reminds README/CHANGELOG updates
+    └── trim-agents/                     # helps a templated project prune agents it doesn't need
 agent-architecture/
 ├── Principal-Solution-Architect.md     # cross-platform orchestrator persona (see above)
 └── shared-standards/                   # cross-agent conventions referenced when authoring/editing agents

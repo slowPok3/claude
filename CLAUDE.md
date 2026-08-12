@@ -17,7 +17,7 @@ Two families of subagent live here:
 
 There is no `principal-solution-architect` subagent — that role isn't needed. See "Acting as the orchestrator" below for why, and `agent-architecture/Principal-Solution-Architect.md` for the persona this replaces (kept for use in tools without native subagent orchestration).
 
-One **skill** also lives here: `.claude/skills/add-agent/`. Reach for a subagent when the work is open-ended and benefits from an isolated context (reviewing a file, designing a solution); reach for a skill when it's a fixed, repeatable procedure invoked by name. Adding a new agent to this library is the latter — see `.claude/skills/add-agent/SKILL.md` rather than re-deriving the process from this file each time.
+Two **skills** also live here: `.claude/skills/add-agent/` and `.claude/skills/trim-agents/`. Reach for a subagent when the work is open-ended and benefits from an isolated context (reviewing a file, designing a solution); reach for a skill when it's a fixed, repeatable procedure invoked by name. Adding a new agent to this library, and helping a templated project prune the agents it doesn't need, are both the latter — see their `SKILL.md` files rather than re-deriving either process from this file each time.
 
 ## Repository structure
 
@@ -25,7 +25,8 @@ One **skill** also lives here: `.claude/skills/add-agent/`. Reach for a subagent
 .claude/
 ├── agents/                              # single source of truth — all 15 subagents
 └── skills/
-    └── add-agent/                       # scaffolds a new agent file + reminds README/CHANGELOG updates
+    ├── add-agent/                       # scaffolds a new agent file + reminds README/CHANGELOG updates
+    └── trim-agents/                     # helps a templated project prune agents it doesn't need
 agent-architecture/
 ├── Principal-Solution-Architect.md     # cross-platform orchestrator persona, not a Claude Code subagent
 └── shared-standards/                   # cross-agent conventions
