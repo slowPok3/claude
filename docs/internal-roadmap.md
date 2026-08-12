@@ -22,7 +22,7 @@ Once something here ships, it moves out of this file and into
 | ~~Fix `.gitignore`~~ | Done — replaced with real cross-language ignore patterns |
 | ~~Note in `CLAUDE.md` that "What this repo is" needs rewriting post-template~~ | Done |
 | ~~"After you use this template" section in README~~ | Done |
-| Trim-agents guidance | Help a new project figure out which of the 15 agents are actually relevant to them vs. noise (e.g. a pure-Python service doesn't need 5 identity architects) |
+| ~~Trim-agents guidance~~ | Done — shipped as the `trim-agents` skill |
 
 ### Agent library
 | Item | Notes |
