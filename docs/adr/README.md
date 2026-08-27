@@ -26,3 +26,4 @@ decisions; write a new ADR that supersedes it instead.
 | [0001](./0001-record-architecture-decisions.md) | Record architecture decisions | Accepted |
 | [0002](./0002-claude-agents-as-single-source-of-truth.md) | `.claude/agents/` as the single source of truth | Accepted |
 | [0003](./0003-split-roadmap-template-vs-internal.md) | Split the roadmap: template stub vs. this repo's internal backlog | Accepted |
+| [0004](./0004-add-content-specialist-family.md) | Add a third agent family: content specialists | Accepted |

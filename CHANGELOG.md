@@ -11,6 +11,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+#### Content Specialists
+
+- 📝 New third agent family: **content specialists** — language-agnostic and generative, like domain architects, but producing documentation rather than technology-specific code. See ADR 0004 for why this didn't fit either of the existing two families.
+
+**Technical Writer (v1.0.0)**
+- ✅ Writes and improves READMEs, API references, docstrings, user guides, release notes, migration guides, and architecture explanations
+- ✅ Zero Hallucination Policy: never documents behavior not verified against the actual source; verifies third-party API claims via web search
+- ✅ Doc-type-to-audience-to-tone reference table (README vs. API reference vs. tutorial vs. release notes, etc.)
+- ✅ Read/Write/Edit/Grep/Glob/WebSearch tool scope
+
 - 🧩 `.claude/skills/add-agent/SKILL.md` — scaffolds a new `.claude/agents/` file (frontmatter, section shape, version line) matching this repo's established conventions, and walks the README/CHANGELOG update checklist.
 - 🧩 `.claude/skills/trim-agents/SKILL.md` — for a project templated from this repo: figures out which of the 15 pre-installed agents are relevant to what it actually builds, confirms before deleting, and updates `README.md`'s catalog to match. Directly implements the "Trim the agents you don't need" step from README's "After you use this template" section instead of leaving it as unassisted manual work.
 - These are the only two skills this repo ships, deliberately: everything else that might have become a skill is either a subagent's job (open-ended review/design work) or a standing `CLAUDE.md` instruction (roadmap hygiene, doc sync) — see `CLAUDE.md` for the reasoning.
