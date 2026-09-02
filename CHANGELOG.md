@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- 📄 Added a "Git workflow: the `working` branch" section to `CLAUDE.md`: day-to-day work now happens on one long-lived `working` branch instead of a fresh branch per topic, and Claude Code must check for unmerged commits on it and remind the user before starting a new, unrelated topic.
+
 ### Added
 
 #### Content Specialists

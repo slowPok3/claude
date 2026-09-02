@@ -106,3 +106,19 @@ If you finish a PR and neither roadmap file nor `CHANGELOG.md` was touched, chec
 ## Known quirks
 
 - `agent-architecture/shared-standards/il5-security-baseline.md` and `mermaid-patterns.md` are intentionally empty placeholders, not accidentally-blank files — see `docs/internal-roadmap.md` for the plan to fill them in.
+
+## Git workflow: the `working` branch
+
+Day-to-day work in this repo happens on a single long-lived branch named `working`, not a fresh branch per topic. Create it once (`git checkout -b working` off `main`, `git push -u origin working`) and keep reusing it across sessions rather than branching again for the next task.
+
+**Before starting work on a new, unrelated topic or subject** (not a follow-up to what's already in progress on `working`), check whether `working` has commits not yet in `main`:
+
+```
+git fetch origin main
+git log --oneline origin/main..working
+```
+
+If that list is non-empty, **stop and remind the user** that `working` has unmerged changes before proceeding to the new topic — don't just silently pile the new topic's commits on top. Say what's on the branch (a one-line summary per commit is enough) and ask whether to merge/push it to `main` now or keep accumulating. Only proceed with the new topic once the user has responded.
+
+This doesn't apply mid-topic — if the current conversation is still elaborating on work already sitting on `working`, keep committing there without interrupting to ask.
+
