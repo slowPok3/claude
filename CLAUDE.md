@@ -13,7 +13,7 @@ Not a software project — there is no source code, build system, package manife
 Three families of subagent live here:
 
 - **Domain architects** (`python-architect`, `java-architect`, `powershell-architect`, `ansible-architect`, `gitlab-architect`, `powerbi-architect`, `icam-architect`, `pingidentity-architect`, `sailpoint-architect`, `radianlogic-architect`) — generate and review technology-specific solutions.
-- **Code review specialists** (`performance-reviewer`, `security-reviewer`, `benchmark-runner`, `test-runner`, `stress-tester`) — language-agnostic, review-only, applied consistently regardless of tech stack.
+- **Code review specialists** (`code-reviewer`, `performance-reviewer`, `security-reviewer`, `benchmark-runner`, `test-runner`, `stress-tester`) — language-agnostic, review-only, applied consistently regardless of tech stack.
 - **Content specialists** (`technical-writer`) — language-agnostic, generative, but not code — documentation rather than review or implementation.
 
 There is no `principal-solution-architect` subagent — that role isn't needed. See "Acting as the orchestrator" below for why, and `agent-architecture/Principal-Solution-Architect.md` for the persona this replaces (kept for use in tools without native subagent orchestration).
@@ -24,7 +24,7 @@ Two **skills** also live here: `.claude/skills/add-agent/` and `.claude/skills/t
 
 ```
 .claude/
-├── agents/                              # single source of truth — all 16 subagents
+├── agents/                              # single source of truth — all 17 subagents
 └── skills/
     ├── add-agent/                       # scaffolds a new agent file + reminds README/CHANGELOG updates
     └── trim-agents/                     # helps a templated project prune agents it doesn't need
@@ -71,7 +71,7 @@ Cross-cutting per-language specifics already defined in `agent-architecture/shar
 Domain architects and review agents overlap in topic (e.g. `python-architect` has its own performance/security guidance) but not in purpose:
 
 - Use a **domain architect** for end-to-end, technology-specific design or implementation work.
-- Use a **review agent** when you want the same review checklist (performance, security, tests, benchmarks, load behavior) applied consistently regardless of which language or platform the code happens to be in.
+- Use a **review agent** when you want the same review checklist (performance, security, tests, benchmarks, load behavior) applied consistently regardless of which language or platform the code happens to be in. Default to `code-reviewer` for a general review pass (correctness, simplification, readability); reach for `performance-reviewer`/`security-reviewer`/`test-runner`/`benchmark-runner`/`stress-tester` when the request is squarely about one of those specific lenses, or when `code-reviewer` flags something that needs one of them.
 - Use `technical-writer` when the deliverable is documentation itself (a README, an API reference, release notes) rather than code — including writing the docs for something a domain architect or review agent just produced.
 
 ## Conventions when authoring/editing an agent file

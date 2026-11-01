@@ -9,6 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+#### Code Review Specialists
+
+**Code Reviewer (v1.0.0)**
+- ✅ General-purpose review pass: correctness bugs, reuse/simplification opportunities, readability/idiom fit
+- ✅ Explicit hand-off table routing performance/security/test-coverage/benchmark/documentation findings to the specialist agents rather than duplicating their depth
+- ✅ Read/Grep/Glob tool scope (read-only)
+
 ### Changed
 
 - 📄 Added a "Git workflow: the `working` branch" section to `CLAUDE.md`: day-to-day work now happens on one long-lived `working` branch instead of a fresh branch per topic, and Claude Code must check for unmerged commits on it and remind the user before starting a new, unrelated topic.
