@@ -8,6 +8,7 @@ A library of enterprise-grade AI agent system prompts. Every agent lives as a si
 **Code review specialists** (language-agnostic, review-only):
 | Agent | Expertise |
 |---|---|
+| `code-reviewer` | General-purpose review: correctness bugs, reuse/simplification, readability/idiom fit — routes performance/security/test-coverage findings to the specialists below rather than duplicating their depth |
 | `performance-reviewer` | Algorithmic complexity, memory/allocation, I/O and N+1 detection, concurrency, database query performance |
 | `security-reviewer` | OWASP-aligned vulnerability review — injection, broken auth/access control, sensitive data exposure, XXE, XSS/CSRF, SSRF, crypto misuse, dependency risk |
 | `benchmark-runner` | Designs and runs rigorous, reproducible performance benchmarks (timeit, JMH, BenchmarkDotNet, criterion, etc.) |
@@ -37,7 +38,7 @@ There's topical overlap where a domain architect covers the same ground as a rev
 
 ## Using these with Claude Code
 
-This repo doubles as a **Claude Code project template**. `.claude/agents/` is auto-discovered by Claude Code on open — no setup required — and root [`CLAUDE.md`](./CLAUDE.md) gives it the orchestration and standards guidance to use them well. Click **"Use this template"** on GitHub to start a new project with all 16 agents already active.
+This repo doubles as a **Claude Code project template**. `.claude/agents/` is auto-discovered by Claude Code on open — no setup required — and root [`CLAUDE.md`](./CLAUDE.md) gives it the orchestration and standards guidance to use them well. Click **"Use this template"** on GitHub to start a new project with all 17 subagents already active.
 
 Agents auto-invoke based on their `description` frontmatter, or call one explicitly: "use the security-reviewer agent on this file." Run `/agents` in Claude Code to see everything installed and each agent's tool scope.
 
@@ -46,7 +47,7 @@ There is no `principal-solution-architect` subagent. A Claude Code subagent can'
 This repo also ships two **skills**. Skills and subagents solve different problems — a subagent is an isolated-context delegate for open-ended work (review this file, run this benchmark), while a skill is a repeatable, invoke-by-name procedure:
 
 - `.claude/skills/add-agent/` — scaffolds a new agent file (frontmatter, section shape, README/CHANGELOG updates) matching this repo's conventions.
-- `.claude/skills/trim-agents/` — for a project templated from this repo: figures out which of the 16 pre-installed agents are actually relevant and helps remove the rest, so unused agents don't clutter `/agents` or auto-trigger on unrelated work.
+- `.claude/skills/trim-agents/` — for a project templated from this repo: figures out which of the 17 pre-installed agents are actually relevant and helps remove the rest, so unused agents don't clutter `/agents` or auto-trigger on unrelated work.
 
 ## Using these with other AI platforms
 
@@ -72,14 +73,14 @@ repo rather than your new project. Before you get going:
 
 1. **Rewrite `CLAUDE.md`'s "What this repo is"** — it currently says "no source code, no build system," which stops being true the moment you add real application code. Everything else in `CLAUDE.md` (the agent roster, orchestration guidance, standards) stays valid regardless of what you're building.
 2. **Delete `docs/internal-roadmap.md`** — that's our backlog for developing the agent library itself (new architects to add, placeholders to fill in), not relevant to your project. Start filling in the empty `ROADMAP.md` instead.
-3. **Trim the agents you don't need.** All 16 are active by default; if your project has nothing to do with, say, SailPoint or Power BI, delete those files from `.claude/agents/` so they don't clutter `/agents` or get invoked by mistake. Run the `trim-agents` skill (or just ask Claude to help trim unused agents) instead of doing this by hand.
+3. **Trim the agents you don't need.** All 17 are active by default; if your project has nothing to do with, say, SailPoint or Power BI, delete those files from `.claude/agents/` so they don't clutter `/agents` or get invoked by mistake. Run the `trim-agents` skill (or just ask Claude to help trim unused agents) instead of doing this by hand.
 4. **Reset `CHANGELOG.md`** — it currently documents *this* repo's history. Start a fresh `## [Unreleased]` for your own project.
 
 ## Repository structure
 
 ```
 .claude/
-├── agents/                              # single source of truth — all 16 subagents
+├── agents/                              # single source of truth — all 17 subagents
 └── skills/
     ├── add-agent/                       # scaffolds a new agent file + reminds README/CHANGELOG updates
     └── trim-agents/                     # helps a templated project prune agents it doesn't need
